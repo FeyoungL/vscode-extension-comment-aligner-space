@@ -1,13 +1,13 @@
 {
-	"name": "comment-aligner",
-	"displayName": "comment aligner",
-	"description": "A tool for aligning the inline trailing comment",
-	"version": "1.0.1",
-	"publisher": "huangbaoshan",
+	"name": "comment-aligner-space",
+	"displayName": "comment aligner space",
+	"description": "A tool for aligning the inline trailing comment, forked from febaoshan/vscode-extension-comment-aligner",
+	"version": "1.0.2",
+	"publisher": "Feyoung",
 	"icon": "icon/icon.png",
 	"repository": {
 		"type": "git",
-		"url":"https://github.com/gitshan/vscode-extension-comment-aligner.git"
+		"url": "https://github.com/feyoungl/vscode-extension-comment-aligner-space.git"
 	},
 	"engines": {
 		"vscode": "^1.30.0"
@@ -20,20 +20,25 @@
 	],
 	"main": "./extension.js",
 	"contributes": {
-		"commands": [{
-            "command": "extension.commentaligner",
-			"title": "Comment Aligner"
-		}]
+		"commands": [
+			{
+				"command": "extension.commentaligner",
+				"title": "Comment Aligner Space"
+			}
+		]
 	},
 	"scripts": {
 		"postinstall": "node ./node_modules/vscode/bin/install",
 		"test": "node ./node_modules/vscode/bin/test"
 	},
 	"devDependencies": {
-		"typescript": "^3.1.4",
-		"vscode": "^1.1.25",
-		"eslint": "^4.11.0",
+		"@types/mocha": "^2.2.42",
 		"@types/node": "^8.10.25",
-		"@types/mocha": "^2.2.42"
+		"eslint": "^4.11.0",
+		"typescript": "^3.1.4",
+		"vscode": "^1.1.25"
+	},
+	"dependencies": {
+		"vsce": "^2.9.1"
 	}
 }

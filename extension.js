@@ -12,7 +12,7 @@ const vscode = require('vscode');
 function addBlankString(num) {
 	let blankStr = '';
 	for(let i = 0; i < num; i++) {
-		blankStr += '\xa0';
+		blankStr += ' ';
 	}
 	return blankStr;
 }
@@ -49,12 +49,12 @@ function activate(context) {
 		let endLine = selection.end.line;
 
 		// 2. 获取每行的注释信息（位置、内容）
-		let commentArr = [];                                                           // 选中行信息缓存数组
-		let commentIndexArr = [];                                                      // 选中行注释起始脚标数组，用于筛选出非注释文本内容最长行
+		let commentArr = [];                                                           // 选中行信息缓存数组
+		let commentIndexArr = [];                                                      // 选中行注释起始脚标数组，用于筛选出非注释文本内容最长行
 		for(let i = startLine; i <= endLine; i++) {
-			let curLineText = activeDocument.lineAt(i).text;                           // 当前行文本内容
-			let curLineCommentIndex = curLineText.lastIndexOf('//');                   // 注释起始脚标，行的最后标记符号；使用时应当避免含有注释符号字符串的非注释行
-			let curLineComment = curLineText.slice(curLineCommentIndex);               // 注释文本
+			let curLineText = activeDocument.lineAt(i).text;                           // 当前行文本内容
+			let curLineCommentIndex = curLineText.lastIndexOf('//');                   // 注释起始脚标，行的最后标记符号；使用时应当避免含有注释符号字符串的非注释行
+			let curLineComment = curLineText.slice(curLineCommentIndex);               // 注释文本
 			let curLineTextWithOutComment = curLineText.slice(0, curLineCommentIndex); // 非注释文本
 
 			commentIndexArr.push(curLineCommentIndex);
@@ -67,10 +67,10 @@ function activate(context) {
 				comment: curLineComment
 			});
 		}
-		
+
 		// 3. 获取非注释文本内容最长行
 		let maxCommentLengthIndex = Math.max.apply(null, commentIndexArr);
-		
+
 		// 4. 归位其他行注释位置，对齐最长行注释位置
 		let newText = commentArr.map(item => {
 			if (item.commentIndex === -1) {

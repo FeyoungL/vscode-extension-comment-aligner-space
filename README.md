@@ -32,6 +32,10 @@ https://github.com/gitshan/vscode-extension-comment-aligner.
 
 ### 1.0.1
 
+change '\xa0' to ' '
+
+### 1.0.1
+
 Add notes.
 
 ### 1.0.0
