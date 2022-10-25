@@ -21,5 +21,5 @@ change '\xa0' to ' '
 - Add detail notes.
 - fix bug.
 
-## [0.0.1]
+### [0.0.1]
 - A new extension for aligning the inline trailing comment.
