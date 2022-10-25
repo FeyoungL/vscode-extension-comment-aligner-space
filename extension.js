@@ -53,12 +53,12 @@ function activate(context) {
 		let commentIndexArr = [];                                                      // 选中行注释起始脚标数组，用于筛选出非注释文本内容最长行
 		for(let i = startLine; i <= endLine; i++) {
 			let curLineText = activeDocument.lineAt(i).text;                           // 当前行文本内容
-			let curLineCommentIndex = curLineText.lastIndexOf('//');                   // 注释起始脚标，行的最后标记符号；使用时应当避免含有注释符号字符串的非注释行
+			let curLineCommentIndex = curLineText.lastIndexOf('///') > 0 ? curLineText.lastIndexOf('///'): curLineText.lastIndexOf('//');                   // 注释起始脚标，行的最后标记符号；使用时应当避免含有注释符号字符串的非注释行
 			let curLineComment = curLineText.slice(curLineCommentIndex);               // 注释文本
 			let curLineTextWithOutComment = curLineText.slice(0, curLineCommentIndex); // 非注释文本
 
-			commentIndexArr.push(curLineCommentIndex);
-			commentArr.push({
+			commentIndexArr.push(curLineCommentIndex);/// asdf
+			commentArr.push({///asdf
 				line: i,
 				lineLength: curLineText.length,
 				curLineText: curLineText,

@@ -30,7 +30,11 @@ https://github.com/gitshan/vscode-extension-comment-aligner.
 
 ## Release Notes
 
-### 1.0.1
+### 1.0.3
+
+feat: support for '///' comment alignment.
+
+### 1.0.2
 
 change '\xa0' to ' '
 

@@ -2,7 +2,7 @@
 	"name": "comment-aligner-space",
 	"displayName": "comment aligner space",
 	"description": "A tool for aligning the inline trailing comment, forked from febaoshan/vscode-extension-comment-aligner",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"publisher": "Feyoung",
 	"icon": "icon/icon.png",
 	"repository": {
